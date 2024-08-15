@@ -1,0 +1,29 @@
+public class RoundToNearestTen {
+    public static String roundToNearestTen(String str) {
+        // Convert the string to an integer
+        int number = Integer.parseInt(str);
+
+        // Find the last digit
+        int lastDigit = number % 10;
+
+        // Round the number based on the last digit
+        if (lastDigit <= 4) {
+            // Round down
+            number -= lastDigit;
+        } else {
+            // Round up
+            number += (10 - lastDigit);
+        }
+
+        // Convert the result back to string if needed and return
+        return Integer.toString(number);
+    }
+
+    public static void main(String[] args) {
+        String str1 = "29";
+        System.out.println(roundToNearestTen(str1));  // Output: "30"
+
+        String str2 = "15";
+        System.out.println(roundToNearestTen(str2));  // Output: "10"
+    }
+}
