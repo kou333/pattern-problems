@@ -1,0 +1,31 @@
+class Solution {
+    // Function to find the first non-repeating character in a string.
+    static char nonrepeatingCharacter(String S) {
+        char[] c = S.toCharArray();
+        
+        for (int i = 0; i < c.length; i++) {
+            boolean isRepeating = false;
+            
+            // Check if the character c[i] is repeated
+            for (int j = 0; j < c.length; j++) {
+                if (i != j && c[i] == c[j]) {
+                    isRepeating = true;
+                    break;
+                }
+            }
+            
+            // If the character is not repeated, return it
+            if (!isRepeating) {
+                return c[i];
+            }
+        }
+
+        // Return '$' if no non-repeating character is found
+        return '$';
+    }
+
+    public static void main(String[] args) {
+        String S = "geeksforgeeks";
+        System.out.println(nonrepeatingCharacter(S)); // Expected Output: 'f'
+    }
+}
