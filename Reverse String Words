@@ -1,0 +1,28 @@
+public class Solution {
+
+    public String reverseWords(String s) {
+        // Split the input string by dots
+        String[] words = s.split("\\.");
+        
+        // Reverse the array of words
+        int left = 0;
+        int right = words.length - 1;
+        while (left < right) {
+            String temp = words[left];
+            words[left] = words[right];
+            words[right] = temp;
+            left++;
+            right--;
+        }
+        
+        // Join the reversed array with dots
+        return String.join(".", words);
+    }
+
+    public static void main(String[] args) {
+        Solution solution = new Solution();
+        
+        // Test cases
+        System.out.println(solution.reverseWords("i.like.this.program.very.much")); // Output: "much.very.program.this.like.i"
+    }
+}
