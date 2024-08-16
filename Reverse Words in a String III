@@ -1,0 +1,19 @@
+lass Solution {
+    public String reverseWords(String s) {
+        // Split the input string by spaces to get individual words
+        String[] words = s.split(" ");
+        
+        // Use a StringBuilder to build the result
+        StringBuilder reversedString = new StringBuilder();
+        
+        // Iterate over each word
+        for (String word : words) {
+            // Reverse the current word and append it to the StringBuilder
+            reversedString.append(new StringBuilder(word).reverse().toString());
+            reversedString.append(" "); // Add space after each reversed word
+        }
+        
+        // Convert StringBuilder to String and trim the trailing space
+        return reversedString.toString().trim();
+    }
+}
