@@ -1,0 +1,21 @@
+class HelloWorld {
+    public static void main(String[] args) 
+    {
+        String str1 = "abcde", str2 = "deabc";    // Example strings
+        
+        // Check if the lengths of both strings are the same
+        if (str1.length() != str2.length()) {
+            System.out.println("Second string is not a rotation of the first string");
+        } else {
+            // Concatenate str1 with itself
+            str1 = str1.concat(str1);
+            
+            // Check if str2 is a substring of the concatenated str1
+            if (str1.contains(str2)) {
+                System.out.println("Second string is a rotation of the first string");
+            } else {
+                System.out.println("Second string is not a rotation of the first string");
+            }
+        }
+    }
+}
