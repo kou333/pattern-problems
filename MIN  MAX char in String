@@ -1,0 +1,33 @@
+import java.util.*;
+
+class MinMaxCharacter {
+    public static void main(String[] args) {
+        String str = "TheQuickBrownFox";
+        
+        // Convert the string to lowercase to ignore case sensitivity (optional)
+        str = str.toLowerCase();
+
+        // Initialize min and max characters with the first character of the string
+        char minChar = str.charAt(0);
+        char maxChar = str.charAt(0);
+        
+        // Iterate over the string
+        for (int i = 1; i < str.length(); i++) {
+            char currentChar = str.charAt(i);
+            
+            // Update minChar if currentChar is smaller
+            if (currentChar < minChar) {
+                minChar = currentChar;
+            }
+            
+            // Update maxChar if currentChar is larger
+            if (currentChar > maxChar) {
+                maxChar = currentChar;
+            }
+        }
+        
+        // Output the results
+        System.out.println("Minimum character in the string: " + minChar);
+        System.out.println("Maximum character in the string: " + maxChar);
+    }
+}
