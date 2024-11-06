@@ -1,0 +1,48 @@
+class HelloWorld{
+    
+    
+    public static void main(String [] args)
+    {
+        
+        String str1=" 123xyz4";
+        
+        System.out.println(sumnum(str1));
+        
+    }
+    
+    
+    public static int sumnum  (String str)
+    {
+        int sum =0;
+        
+        int num=0;
+        
+        boolean inNumber=false;
+        
+        for(char ch: str.toCharArray())
+        {
+            if(Character.isDigit(ch))
+            {
+                num=num*10+(ch-'0');
+                inNumber=true;
+            }
+            
+            else if(inNumber)
+            {
+                sum+=num;
+                num=0;
+                inNumber=false;
+            }
+        }
+        if(inNumber)
+        {
+            sum+=num;
+        }
+        return sum;
+    }
+    
+    
+    
+    
+}
+
