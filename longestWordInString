@@ -1,0 +1,29 @@
+class Main{
+    
+    
+    
+    public static void main(String [] args)
+    {
+        String str=" TEH name IS sOMMETHING";
+        
+        
+        str=str.trim();
+        
+        String [] words=str.split("\\s+");
+        
+        
+        int maxlength=words[0].length();
+        
+        String longestWord=words[0];
+        for(String bird:words)
+        {
+           if( bird.length()>maxlength)
+            {
+                maxlength=bird.length();
+                longestWord=bird;
+            }
+        }
+         System.out.println("Longest word: " + longestWord);
+        System.out.println("Length of the longest word: " + maxlength);
+    }
+}
