@@ -1,0 +1,21 @@
+class Main {
+    public static void main(String[] args) {
+        String str = "The name is something amazing";
+        
+        // Split the string into words
+        String[] words = str.split(" ");
+        
+        // Initialize variables to keep track of the largest word
+        String largestWord = "";
+        
+        // Iterate through each word to find the largest
+        for (String word : words) {
+            if (word.length() > largestWord.length()) {
+                largestWord = word;
+            }
+        }
+        
+        // Output the largest word
+        System.out.println("The largest word is: " + largestWord);
+    }
+}
