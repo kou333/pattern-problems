@@ -1,0 +1,41 @@
+public class Main {
+    public static void main(String[] args) {
+        String str = " the name is something ";
+        
+        // Trim leading and trailing spaces
+        str = str.trim();
+
+        // Convert the string to a character array
+        char[] str1 = str.toCharArray();
+
+        // Variable to track the start of each word
+        int wordStart = -1;
+
+        // Loop through each character in the array
+        for (int i = 0; i < str1.length; i++) {
+            // Check for the start of a word
+            if (wordStart == -1 && str1[i] != ' ') {
+                wordStart = i;
+            }
+            
+            // Check for the end of a word or the last character
+            if (wordStart != -1 && (str1[i] == ' ' || i == str1.length - 1)) {
+                // Calculate the end index of the word
+                int wordEnd = (str1[i] == ' ') ? i - 1 : i;
+
+                // Capitalize the first and last letter of the word
+                str1[wordStart] = Character.toUpperCase(str1[wordStart]);
+                str1[wordEnd] = Character.toUpperCase(str1[wordEnd]);
+
+                // Reset wordStart for the next word
+                wordStart = -1;
+            }
+        }
+
+        // Convert the character array back to a string
+        String result = new String(str1);
+        
+        // Print the result
+        System.out.println("Resulting string: " + result);
+    }
+}
