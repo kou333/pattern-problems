@@ -1,0 +1,47 @@
+class Main{
+    
+    
+    public static  void main(String [] args )
+ {
+     
+     String str1="   The name is some the ";
+     
+     str1=str1.trim();
+     
+    str1=str1.toLowerCase();
+     
+     
+     char [] str=str1.toCharArray();
+     
+     
+     for(int i=0; i<str1.length(); i++)
+     {
+          int count=0;
+          
+          if(str[i]==' ')
+          {
+              continue;
+          }
+          
+          for(int j=i+1; j<str.length; j++)
+          {
+              if(str[i]==str[j])
+              {
+                  count++;
+                  
+                  str[j] = ' ';
+              }
+          }
+          
+          System.out.println(str[i]+" " + count);
+          
+     }
+     
+     
+     
+     
+     
+     
+     
+ }
+ 
