@@ -1,41 +1,31 @@
 public class Main {
-    public static void main(String[] args) {
-        String str = " the name is something ";
-        
-        // Trim leading and trailing spaces
-        str = str.trim();
+    public static String capitalize(String str) {
+        StringBuffer sb = new StringBuffer(str);
+        int size = str.length();
 
-        // Convert the string to a character array
-        char[] str1 = str.toCharArray();
-
-        // Variable to track the start of each word
-        int wordStart = -1;
-
-        // Loop through each character in the array
-        for (int i = 0; i < str1.length; i++) {
-            // Check for the start of a word
-            if (wordStart == -1 && str1[i] != ' ') {
-                wordStart = i;
+        for (int i = 0; i < size; i++) {
+            // Capitalize the first and last characters of the string
+            if (i == 0 || i == size - 1) {
+                sb.setCharAt(i, Character.toUpperCase(str.charAt(i)));
             }
-            
-            // Check for the end of a word or the last character
-            if (wordStart != -1 && (str1[i] == ' ' || i == str1.length - 1)) {
-                // Calculate the end index of the word
-                int wordEnd = (str1[i] == ' ') ? i - 1 : i;
-
-                // Capitalize the first and last letter of the word
-                str1[wordStart] = Character.toUpperCase(str1[wordStart]);
-                str1[wordEnd] = Character.toUpperCase(str1[wordEnd]);
-
-                // Reset wordStart for the next word
-                wordStart = -1;
+            // Capitalize the character before and after each space
+            else if (str.charAt(i) == ' ') {
+                if (i - 1 >= 0) {
+                    sb.setCharAt(i - 1, Character.toUpperCase(str.charAt(i - 1)));
+                }
+                if (i + 1 < size) {
+                    sb.setCharAt(i + 1, Character.toUpperCase(str.charAt(i + 1)));
+                }
             }
         }
 
-        // Convert the character array back to a string
-        String result = new String(str1);
-        
-        // Print the result
-        System.out.println("Resulting string: " + result);
+        return sb.toString();
+    }
+
+    public static void main(String args[]) {
+        String str = "Take u Forward is Awesome";
+
+        System.out.println("String after capitalizing the first and last letter of each word:");
+        System.out.println(capitalize(str));
     }
 }
