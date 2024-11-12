@@ -1,0 +1,44 @@
+import java.util.*;
+
+class Main{
+    
+    public static void main(String[] args)
+    {
+       String str1="THE name is something";
+       
+       String str2="the eman is somthinge";
+       
+       
+       str1=str1.trim().toLowerCase();
+       
+       char [] str1c=str1.toCharArray();
+       
+       str2=str2.trim().toLowerCase();
+       
+       char[] str2c=str2.toCharArray();
+       
+       
+       
+       
+       Arrays.sort(str1c);
+       
+       Arrays.sort(str2c);
+       
+       if(Arrays.equals(str1c,str2c))
+       {
+           System.out.println(" anagram");
+       }
+       else
+       {
+           System.out.println(" not anagraem");
+       }
+       
+       
+       
+}
+
+
+}
+
+
+
