@@ -1,0 +1,28 @@
+import java.util.Arrays;
+
+class Main {
+    
+    public static double Avg(int[] arr) {
+        int n = arr.length;
+        Arrays.sort(arr); // Sort the array first
+        
+        double avgNum;
+        
+        // Check if the array length is odd
+        if (n % 2 != 0) {
+            avgNum = arr[n / 2]; // Middle element for odd-length arrays
+        } else {
+            avgNum = (arr[n / 2] + arr[(n / 2) - 1]) / 2.0; // Average of two middle elements for even-length arrays
+        }
+        
+        return avgNum;
+    }
+    
+    public static void main(String[] args) {
+        int arr1[] = {1, 2, 3, 4};
+        int arr2[] = {3, 4, 5};
+        
+        System.out.println("Median of arr1: " + Avg(arr1)); 
+        System.out.println("Median of arr2: " + Avg(arr2)); 
+    }
+}
