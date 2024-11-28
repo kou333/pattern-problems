@@ -1,0 +1,25 @@
+class Main {
+    public static void main(String[] args) {
+        int arr[] = {1, 1, 2, 3, 4, 4, 5, 2, 2, 2, 2, 2};
+
+        System.out.print("Non-repeating elements are: ");
+
+        // Traverse the array to find non-repeating elements
+        for (int i = 0; i < arr.length; i++) {
+            boolean isRepeating = false;
+
+            // Compare the current element with all subsequent elements
+            for (int j = 0; j < arr.length; j++) {
+                if (i != j && arr[i] == arr[j]) {
+                    isRepeating = true;
+                    break;  // If a match is found, it's a duplicate, break out
+                }
+            }
+
+            // If no duplicate was found, print the element
+            if (!isRepeating) {
+                System.out.print(arr[i] + " ");
+            }
+        }
+    }
+}
