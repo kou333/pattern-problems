@@ -1,0 +1,31 @@
+import java.util.*;
+
+class Main {
+    public static void main(String[] args) {
+        int[] arr = {50, 20, 50, 30, 10};
+        int n = arr.length;
+
+        // Clone and sort the array
+        int[] sortedArr = arr.clone();
+        Arrays.sort(sortedArr);
+
+        // Create a rank array
+        int[] rank = new int[n];
+
+        // Assign ranks to the original array
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                if (arr[i] == sortedArr[j]) {
+                    rank[i] = j + 1; // Rank starts from 1
+                    break;
+                }
+            }
+        }
+
+        // Print the ranks
+        System.out.println("Ranks of the elements:");
+        for (int r : rank) {
+            System.out.print(r + " ");
+        }
+    }
+}
