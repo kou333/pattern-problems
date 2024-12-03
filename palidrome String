@@ -1,0 +1,48 @@
+import java.util.*;
+
+
+
+class Main
+{
+    
+    public static void main (String[] args)
+    {
+        
+        
+        String str="nitin";
+        
+        str=str.trim().toLowerCase();
+        
+        
+      boolean isPalidrome=true;
+      
+      
+      int i=0;
+      int j=str.length()-1;
+      
+      while(i<j)
+      {
+          if(str.charAt(i)!=str.charAt(j))
+          {
+              isPalidrome=false;
+              break;
+          }
+          i++;
+          j--;
+          
+      }
+      
+      
+      
+      if(isPalidrome)
+      {
+          System.out.println("palidrome");
+      }
+      else
+      {
+          System.out.println("not palnforme");
+      }
+    
+    
+}
+}
