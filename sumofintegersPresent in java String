@@ -1,0 +1,45 @@
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+
+class Main {
+    
+    
+    public static void main(String[] args) 
+    {
+      
+      String str=" The 123 i345";
+      
+      
+      int sum=0;
+      
+      
+      for(int i=0;i<str.length(); i++)
+      {
+          if(str.charAt(i)>='0' && str.charAt(i)<='9')
+          {
+                sum += (str.charAt(i) - '0');
+          }
+      }
+      
+      System.out.println(sum);
+    
+      
+    }
+}
+
+// The expression sum += (str.charAt(i) - '0'); works because of how characters and integers are represented in Java.
+
+// Explanation:
+// Character Representation in Java:
+// In Java, characters are internally represented as integers (ASCII or Unicode values). For example:
+
+// '0' has an ASCII value of 48
+// '1' has an ASCII value of 49
+// '2' has an ASCII value of 50, and so on.
+// Subtraction to Get Numeric Value:
+// When you subtract '0' from a character digit, it effectively maps the character's ASCII value to its corresponding integer value:
+
+// '3' - '0' → 51 - 48 → 3
+// '5' - '0' → 53 - 48 → 5
+// Adding to sum:
+// This operation adds the numerical value of the character (converted from its ASCII value) to the sum variable.
