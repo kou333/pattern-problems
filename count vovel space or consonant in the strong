@@ -1,0 +1,47 @@
+import java.util.*;
+
+
+
+class Main
+{
+    
+    public static void main (String[] args)
+    {
+        
+        
+        String str="nitin  naman  chaman ";
+        
+        char [] str2 =str.toCharArray();
+        
+        
+        int countVovel=0;
+        
+        int countSpace=0;
+        int countConsonen=0;
+        
+        
+        for(int i=0; i<str2.length; i++)
+        {
+            if(str2[i]=='a'||str2[i]=='e'||str2[i]=='i'||str2[i]=='o'||str2[i]=='u')
+            {
+                countVovel++;
+            }
+            else if(str2[i]==' ')
+            {
+                countSpace++;
+            }
+            else
+            {
+                countConsonen++;
+            }
+            
+            
+            
+            
+        }
+        
+        
+        System.out.println("the count id "+countVovel+" the consonent is " +countSpace +"space is "+ countConsonen);
+    
+}
+}
