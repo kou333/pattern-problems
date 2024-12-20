@@ -1,0 +1,64 @@
+You are given two long numbers N1 and N2 in a string. You need to find out if the product of these numbers generate an even number or an odd number, If it is an even number print 1 else print 0.
+
+Example 1:
+
+Input: 
+N1 = "12"
+N2 = "15"
+Output: 1
+Explanation: 12 * 15 = 180 which is an 
+even number.
+â€‹Example 2:
+
+Input: 
+N1 = "123"
+N2 = "457"
+Output: 0
+Explanation: 123*457 = 56211 which is an 
+odd number.
+Your Task:
+You don't need to read input or print anything. Your task is to complete the function EvenOdd() which accepts two strings N1 and N2 as input parameter and returns 1 or 0 accordingly.
+
+Expected Time Complexity: O(1).
+Expected Auxiliary Space: O(1).
+
+Constraints:
+1 ≤ N1, N2 ≤ 1099
+
+
+
+coding solution       
+
+
+
+
+
+
+
+class Sol {
+    int EvenOdd(String n1, String n2) {
+        // Get the last digit of both numbers as characters
+        char lastDigit1 = n1.charAt(n1.length() - 1);
+        char lastDigit2 = n2.charAt(n2.length() - 1);
+
+        // Check if either last digit is even (0, 2, 4, 6, 8)
+        if (isEven(lastDigit1) || isEven(lastDigit2)) {
+            return 1; // Return 1 for even
+        } else {
+            return 0; // Return 0 for odd
+        }
+    }
+
+    // Helper method to check if a character representing a digit is even
+    private boolean isEven(char digit) {
+        return digit == '0' || digit == '2' || digit == '4' || digit == '6' || digit == '8';
+    }
+}
+
+
+
+
+
+
+
+
