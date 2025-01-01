@@ -1,0 +1,24 @@
+class Solution{
+    static String removeChars(String string1, String string2)
+    {
+        Set<Character> set=new HashSet<>();
+        
+        for(char c:string2.toCharArray())
+        {
+            set.add(c);
+        }
+        
+        StringBuilder result = new StringBuilder();
+        
+        
+        for(char c:string1.toCharArray())
+        {
+            if(!set.contains(c))
+            {
+                result.append(c);
+            }
+        }
+        
+        return result.toString();
+    }
+}
