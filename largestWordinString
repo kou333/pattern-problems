@@ -1,0 +1,19 @@
+public class Main {
+    // Function to find the largest word in a string
+    static String findLargestWord(String str) {
+        String[] words = str.split("\\s+"); // Split by spaces
+        String largest = "";
+
+        for (String word : words) {
+            if (word.length() > largest.length()) {
+                largest = word;
+            }
+        }
+        return largest;
+    }
+
+    public static void main(String[] args) {
+        String str = "The quick brown fox jumps over the lazy dog";
+        System.out.println("Largest word: " + findLargestWord(str));
+    }
+}
